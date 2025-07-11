@@ -14,6 +14,8 @@ Um plugin WordPress que captura leads através de um formulário WhatsApp e gere
 - **Custom Post Type**: Gerenciamento de leads como posts customizados
 - **Sistema Kanban**: Interface visual para gestão de status dos leads
 - **Drag & Drop**: Arraste leads entre colunas para alterar status
+- **Botão WhatsApp direto**: Clique para enviar mensagem personalizada via WhatsApp
+- **Configurações personalizáveis**: Configure a mensagem padrão do WhatsApp
 - **Colunas de Status**:
   - **A Enviar**: Leads recém-cadastrados
   - **Enviado**: Leads já processados
@@ -23,6 +25,7 @@ Um plugin WordPress que captura leads através de um formulário WhatsApp e gere
 - **Nonce Security**: Proteção contra ataques CSRF
 - **Sanitização**: Todos os dados são sanitizados antes do armazenamento
 - **Responsivo**: Interface adaptável para desktop e mobile
+- **Placeholder dinâmico**: Substitui automaticamente o nome do contato na mensagem
 
 ## 📦 Instalação
 
@@ -39,7 +42,6 @@ Um plugin WordPress que captura leads através de um formulário WhatsApp e gere
 3. No painel WordPress, vá em `Plugins > Plugins instalados`
 4. Ative o plugin "Talk WhatsApp Form + Kanban"
 
-
 ## 🔧 Como Usar
 
 ### 1. Configuração Inicial
@@ -47,14 +49,21 @@ Após ativar o plugin, você verá:
 - Um novo menu "Leads da Talk" no admin
 - O botão flutuante aparecerá automaticamente no frontend
 
-### 2. Captura de Leads (Frontend)
+### 2. Configuração da Mensagem WhatsApp
+1. Acesse `Leads da Talk > ⚙️ Configurações`
+2. Configure a mensagem padrão que será enviada via WhatsApp
+3. Use o placeholder `{nome}` para incluir automaticamente o nome do contato
+4. Exemplo: "Olá {nome}. Agradeço o interesse na palestra..."
+5. Clique em "Salvar Configurações"
+
+### 3. Captura de Leads (Frontend)
 1. Os visitantes verão um botão verde "📩 Receba esta talk pelo WhatsApp"
 2. Ao clicar, abrirá um popup com formulário
 3. Campos obrigatórios: Nome e Telefone
 4. O telefone é automaticamente formatado como (00) 00000-0000
 5. Após envio, exibe confirmação de sucesso
 
-### 3. Gerenciamento de Leads (Admin)
+### 4. Gerenciamento de Leads (Admin)
 
 #### Visualização Lista
 - Acesse `Leads da Talk` no menu lateral
@@ -65,16 +74,25 @@ Após ativar o plugin, você verá:
 - Clique em `📌 Kanban` no submenu
 - Visualize leads organizados por status
 - **Arraste e solte** leads entre colunas para alterar status
+- **Botão WhatsApp** (💬): Clique para enviar mensagem personalizada
 - Status disponíveis:
   - **A Enviar**: Leads aguardando processamento
   - **Enviado**: Leads já processados
 
-### 4. Fluxo de Trabalho Recomendado
-1. Leads são criados automaticamente com status "A Enviar"
-2. Processe os leads (envie conteúdo via WhatsApp)
-3. Mova o lead para coluna "Enviado" no Kanban
-4. Mantenha controle visual do pipeline de leads
+### 5. Fluxo de Trabalho Recomendado
+1. Configure a mensagem padrão em `Configurações`
+2. Leads são criados automaticamente com status "A Enviar"
+3. No Kanban, clique no botão 💬 para enviar mensagem via WhatsApp
+4. Mova o lead para coluna "Enviado" após processar
+5. Mantenha controle visual do pipeline de leads
 
+## ⚙️ Configurações Disponíveis
+
+### Mensagem WhatsApp
+- **Localização**: `Leads da Talk > ⚙️ Configurações`
+- **Placeholder**: Use `{nome}` para personalizar com o nome do contato
+- **Exemplo padrão**: "Olá {nome}. Agradeço o interesse na palestra, segue o material que você pediu: [link]"
+- **Funcionalidade**: A mensagem será enviada quando clicar no botão WhatsApp no Kanban
 
 ## 🔒 Segurança
 
@@ -104,4 +122,9 @@ O plugin implementa:
 ### Leads não são salvos
 - Verifique console do navegador para erros JavaScript
 - Confirme se AJAX está funcionando corretamente
+
+### Mensagem WhatsApp não personaliza
+- Verifique se salvou as configurações
+- Confirme se usou o placeholder `{nome}` corretamente
+- Teste com diferentes navegadores
 
