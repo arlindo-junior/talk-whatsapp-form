@@ -1,6 +1,6 @@
 # Talk WhatsApp Form + Kanban
 
-Um plugin WordPress que captura contatos através de um formulário na página e gerencia o status dos contatos em um sistema Kanban. Utilize esse sistema para enviar conteúdo de palestras/talks de uma maneira mais pessoal e de uma maneira produtiva. Plugin criado durante o Wordpress Meetup Floripa em 10 de Julho de 2025.
+Um plugin WordPress que captura contatos através de um formulário na página e gerencia o status dos contatos em um sistema Kanban. Utilize esse sistema para enviar conteúdo de palestras/talks de uma maneira mais pessoal e produtiva. Plugin criado durante o Wordpress Meetup Floripa em 10 de Julho de 2025.
 
 ## 🚀 Funcionalidades
 
